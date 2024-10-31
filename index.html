@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Laptop Application 2025</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Laptop Application 2025</h1>
+
+        <form id="application-form" data-netlify="true" method="POST" action="/success">
+            <label for="full-names">Full Names:</label>
+            <input type="text" id="full-names" name="full-names" placeholder="Thabo Mbeki" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="thabo@student.uj.ac.za" required>
+
+            <label for="qualification">Qualification:</label>
+            <input type="text" id="qualification" name="qualification" placeholder="Bachelor of Accounting Science" required>
+
+            <label for="university">University:</label>
+            <input type="text" id="university" name="university" placeholder="University of Cape town" required>
+
+            <label for="student-number">Student Number:</label>
+            <input type="text" id="student-number" name="student-number" placeholder="123456789" required>
+
+            <label for="computer-model">Computer Model:</label>
+            <select id="computer-model" name="computer-model" required>
+                <option value="default">Select a model</option>
+                <option value="dell">Dell</option>
+                <option value="hp">HP</option>
+                <option value="lenovo">Lenovo</option>
+                <option value="asus">Asus</option>
+                <option value="acer">Acer</option>
+            </select>
+
+            <img id="laptop-image" src="default.jpg" alt="Laptop Model" />
+
+            <label for="id-copy">ID Copy:</label>
+            <input type="file" id="id-copy" name="id-copy" accept=".jpg, .jpeg, .png" required>
+
+            <label for="proof-residence">Proof of Residence:</label>
+            <input type="file" id="proof-residence" name="proof-residence" accept=".pdf" required>
+
+            <label for="acceptance-letter">Acceptance Letter / Proof of Registration:</label>
+            <input type="file" id="acceptance-letter" name="acceptance-letter" accept=".jpg, .jpeg, .png" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        const modelSelect = document.getElementById('computer-model');
+        const laptopImage = document.getElementById('laptop-image');
+
+        modelSelect.addEventListener('change', function() {
+            const selectedModel = modelSelect.value;
+            switch (selectedModel) {
+                case 'dell':
+                    laptopImage.src = 'dell.jpg';
+                    break;
+                case 'hp':
+                    laptopImage.src = 'hp.jpg';
+                    break;
+                case 'lenovo':
+                    laptopImage.src = 'lenovo.jpg';
+                    break;
+                case 'asus':
+                    laptopImage.src = 'asus.jpg';
+                    break;
+                case 'acer':
+                    laptopImage.src = 'acer.jpg';
+                    break;
+                default:
+                    laptopImage.src = 'default.jpg';
+            }
+        });
+    </script>
+</body>
+</html>
+
